@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>YASH Enterprises | Premium Branding & Print Solutions</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    :root {
+      --primary: #0f172a;    /* Deep Blue */
+      --accent: #f97316;     /* Bright Orange */
+      --text: #334155;
+      --white: #ffffff;
+      --glass: rgba(255, 255, 255, 0.95);
+      --bg-light: #f8fafc;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    body { 
+      font-family: 'Inter', sans-serif; 
+      color: var(--text); 
+      background: var(--bg-light);
+      scroll-behavior: smooth;
+      line-height: 1.6;
+    }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+    header { background: var(--glass); backdrop-filter: blur(10px); border-bottom: 1px solid #e2e8f0; padding: 15px 0; position: sticky; top: 0; z-index: 1000; }
+    nav { display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-size: 24px; font-weight: 900; color: var(--primary); text-decoration: none; letter-spacing: -0.5px; }
+    .logo span { color: var(--accent); }
+    .nav-links a { color: var(--text); margin-left: 30px; text-decoration: none; font-size: 14px; font-weight: 600; transition: 0.3s; }
+    .nav-links a:hover { color: var(--accent); }
+
+    .hero { padding: 120px 0 80px; text-align: center; background: var(--white); }
+    .hero-brand { font-size: 14px; font-weight: 800; color: var(--accent); text-transform: uppercase; letter-spacing: 3px; margin-bottom: 10px; display: block; }
+    .hero h1 { font-size: 64px; color: var(--primary); margin-bottom: 25px; font-weight: 900; line-height: 1.1; }
+    .hero h1 span { color: var(--accent); }
+    .hero p { max-width: 700px; margin: 0 auto 40px; font-size: 20px; color: #64748b; font-weight: 400; }
+
+    .section-tag { color: var(--accent); font-weight: 800; text-transform: uppercase; letter-spacing: 2px; font-size: 13px; margin-bottom: 15px; display: block; }
+
+    .about-section { padding: 100px 0; background: var(--bg-light); border-radius: 40px; margin: 20px auto; }
+    .about-content { max-width: 900px; margin: 0 auto; text-align: center; padding: 0 20px; }
+    .about-content h2 { font-size: 36px; color: var(--primary); margin-bottom: 25px; font-weight: 800; }
+    .about-content p { font-size: 18px; color: var(--text); }
+
+    .btn-main { background: var(--accent); color: #fff; padding: 16px 36px; border-radius: 50px; text-decoration: none; font-weight: 700; transition: 0.3s; display: inline-block; border: none; cursor: pointer; box-shadow: 0 10px 20px rgba(249, 115, 22, 0.2); }
+    .btn-main:hover { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(249, 115, 22, 0.3); background: #ea580c; }
+
+    .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; padding: 80px 0; background: var(--white); }
+    .service-card { background: var(--bg-light); border-radius: 24px; overflow: hidden; transition: 0.4s; border: 1px solid #f1f5f9; display: flex; flex-direction: column; }
+    .service-card:hover { transform: translateY(-12px); box-shadow: 0 30px 60px rgba(15, 23, 42, 0.1); border-color: var(--accent); }
+    .s-img { width: 100%; height: 240px; object-fit: cover; }
+    .s-content { padding: 30px; flex-grow: 1; text-align: center; }
+    .s-content h3 { margin-bottom: 12px; color: var(--primary); font-size: 22px; font-weight: 800; }
+    .s-content p { font-size: 15px; color: #64748b; margin-bottom: 20px; }
+    .btn-service { width: 100%; font-size: 14px; padding: 12px; }
+
+    .features-section { padding: 80px 0; background: var(--bg-light); }
+    .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
+    .feature-box { background: var(--white); padding: 40px; border-radius: 24px; text-align: center; border: 1px solid #e2e8f0; transition: 0.3s; }
+    .feature-box:hover { transform: translateY(-10px); border-color: var(--accent); box-shadow: 0 20px 40px rgba(15, 23, 42, 0.05); }
+    .feature-icon { font-size: 45px; margin-bottom: 20px; display: block; }
+    .feature-box h3 { color: var(--primary); margin-bottom: 15px; font-size: 20px; font-weight: 800; }
+    .feature-box p { font-size: 15px; color: #64748b; }
+
+    .form-container { background: #fff; padding: 60px; border-radius: 40px; border: 1px solid #e2e8f0; max-width: 900px; margin: 80px auto; box-shadow: 0 40px 100px rgba(15, 23, 42, 0.05); }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; }
+    .full-width { grid-column: span 2; }
+    label { display: block; font-weight: 700; color: var(--primary); margin-bottom: 10px; font-size: 14px; }
+    input, select, textarea { width: 100%; padding: 16px; border: 1px solid #e2e8f0; border-radius: 12px; font-family: inherit; background: #f8fafc; transition: 0.3s; }
+    input:focus, select:focus, textarea:focus { outline: none; border-color: var(--accent); background: #fff; box-shadow: 0 0 0 4px rgba(249, 115, 22, 0.1); }
+
+    .portfolio-section { padding: 100px 0 60px; background: var(--white); }
+    .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 40px; }
+    .portfolio-item { height: 300px; border-radius: 20px; overflow: hidden; position: relative; cursor: pointer; }
+    .portfolio-item img { width: 100%; height: 100%; object-fit: cover; transition: 0.6s cubic-bezier(0.4, 0, 0.2, 1); }
+    .portfolio-item:hover img { transform: scale(1.1); }
+    .portfolio-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(15, 23, 42, 0.9), transparent); display: flex; align-items: flex-end; padding: 30px; opacity: 0; transition: 0.4s; }
+    .portfolio-item:hover .portfolio-overlay { opacity: 1; }
+    .portfolio-overlay h4 { color: #fff; font-size: 20px; }
+
+    @media (max-width: 768px) { .hero h1 { font-size: 42px; } .form-grid { grid-template-columns: 1fr; } .full-width { grid-column: span 1; } }
+
+    footer { background: var(--primary); color: #94a3b8; padding: 80px 0; }
+    .footer-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 50px; }
+    .footer-link { color: #fff; text-decoration: none; display: block; margin-bottom: 12px; transition: 0.3s; }
+    .footer-link:hover { color: var(--accent); }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <nav>
+        <a href="#" class="logo">YASH<span>ENTERPRISES</span></a>
+        <div class="nav-links">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#contact">Contact</a>
+          <a href="#work">Portfolio</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="home" class="hero">
+      <span class="hero-brand">YASH Enterprises</span>
+      <h1><span>Stand Out</span> With Powerful<br>Business Designs</h1>
+      <p>We create professional visiting cards, letterheads, ID cards, T-shirts, and more — precisely tailored to reflect your brand's unique identity.</p>
+      <a href="#contact" class="btn-main">Get Your Custom Design</a>
+    </section>
+
+    <section id="about" class="about-section">
+      <div class="about-content">
+        <span class="section-tag">Premium Solutions</span>
+        <h2>Crafting Visual Excellence Since Day One</h2>
+        <p>YASH Enterprises is a trusted graphic design and printing studio based in <b>Hyderabad, Telangana</b>. We specialize in creating high-end business materials that help brands make lasting impressions.</p>
+      </div>
+    </section>
+
+    <section id="services" class="service-grid">
+      <div class="service-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpIsY968PEurdOmgmRDTsqv-noA_8HRZxzAA&s" class="s-img">
+        <div class="s-content">
+          <h3>Visiting Cards</h3>
+          <p>Make a strong first impression with premium finishes.</p>
+          <button class="btn-main btn-service" onclick="selectService('Visiting Cards')">Order Now</button>
+        </div>
+      </div>
+      <div class="service-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMf4s0YEybFeEthVgd4EiMzZnsTTTMtkK8oQ&s" class="s-img">
+        <div class="s-content">
+          <h3>Letterheads</h3>
+          <p>Consistent branding for your official communication.</p>
+          <button class="btn-main btn-service" onclick="selectService('Letterheads')">Order Now</button>
+        </div>
+      </div>
+      <div class="service-card">
+        <img src="https://img.freepik.com/premium-vector/corporate-id-card-template-professional-identity-card-minimal-personal-id-card-any-types-company_1176368-131.jpg?w=740" class="s-img">
+        <div class="s-content">
+          <h3>ID Cards</h3>
+          <p>Durable and professional identification solutions.</p>
+          <button class="btn-main btn-service" onclick="selectService('ID Cards')">Order Now</button>
+        </div>
+      </div>
+      <div class="service-card">
+        <img src="https://thetshrt.com/cdn/shop/files/Printing_on_T-shirts.png?v=1733978307&width=3840" class="s-img">
+        <div class="s-content">
+          <h3>T‑shirts & Merch</h3>
+          <p>Custom printed apparel that builds team spirit.</p>
+          <button class="btn-main btn-service" onclick="selectService('T-shirts')">Order Now</button>
+        </div>
+      </div>
+      <div class="service-card">
+        <img src="https://graphicdesigneye.com/front-end/assets/images/banner/branding-design.png" class="s-img">
+        <div class="s-content">
+          <h3>Logo & Branding</h3>
+          <p>Creative identities that tell your unique story.</p>
+          <button class="btn-main btn-service" onclick="selectService('Logo Design')">Start Branding</button>
+        </div>
+      </div>
+      <div class="service-card">
+        <img src="https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?auto=format&fit=crop&q=80&w=600" class="s-img">
+        <div class="s-content">
+          <h3>Custom Designs</h3>
+          <p>Banners, posters, and any unique requirements.</p>
+          <button class="btn-main btn-service" onclick="selectService('Other')">Get Quote</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="features-section">
+      <div style="text-align: center;">
+        <span class="section-tag">The Yash Promise</span>
+        <h2 style="font-size: 36px; color: var(--primary);">Why Work With Us?</h2>
+      </div>
+      <div class="features-grid">
+        <div class="feature-box">
+          <span class="feature-icon">✨</span>
+          <h3>Custom Designs</h3>
+          <p>Each project is uniquely crafted to reflect your brand's identity. No templates, just original creativity.</p>
+        </div>
+        <div class="feature-box">
+          <span class="feature-icon">🏆</span>
+          <h3>High-Quality</h3>
+          <p>Premium materials and printing techniques for lasting impressions. Professional finish guaranteed.</p>
+        </div>
+        <div class="feature-box">
+          <span class="feature-icon">🚀</span>
+          <h3>Fast Turnaround</h3>
+          <p>Quick delivery without compromising on quality. Your deadlines are our priority.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="form-container">
+      <h2 style="text-align:center; margin-bottom:40px; color: var(--primary); font-size: 32px;">Get Started<br>Share Your Design Requirements</h2>
+      <form id="requirementForm">
+        <div class="form-grid">
+          <div>
+            <label>Full Name</label>
+            <input type="text" name="name" placeholder="Enter your name" required>
+          </div>
+          <div>
+            <label>Company / Business Name</label>
+            <input type="text" name="company" placeholder="Business or Organization Name">
+          </div>
+          <div>
+            <label>Mobile Number</label>
+            <input type="tel" name="mobile" placeholder="+91 XXXXX XXXXX" required>
+          </div>
+          <div>
+            <label>Email Address</label>
+            <input type="email" name="email" placeholder="example@gmail.com" required>
+          </div>
+          <div>
+            <label>Service Type</label>
+            <select name="service" id="serviceDropdown">
+              <option>Visiting Cards</option>
+              <option>Letterheads</option>
+              <option>ID Cards</option>
+              <option>T-shirts</option>
+              <option>Logo Design</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div>
+            <label>Upload Reference Files (JPG, PNG, PDF - Max 5MB Total)</label>
+            <input type="file" id="fileInput" accept=".jpg,.jpeg,.png,.pdf" multiple>
+          </div>
+          <div class="full-width">
+            <label>Full Address Details</label>
+            <textarea name="address" rows="3" placeholder="Enter your complete delivery address"></textarea>
+          </div>
+          <div class="full-width">
+            <label>Detailed Requirements</label>
+            <textarea name="details" rows="5" placeholder="Quantity, Size, Colors..."></textarea>
+          </div>
+        </div>
+        <button type="submit" id="submitBtn" class="btn-main" style="width:100%; margin-top: 20px;">Submit My Requirements</button>
+      </form>
+      <div id="responseMessage" style="text-align:center; margin-top:15px; display:none; font-weight:bold; color:green; padding: 15px; border-radius: 12px; background: #dcfce7;">
+        ✔ Success! Your requirements and files have been sent.
+      </div>
+    </section>
+
+    <section id="work" class="portfolio-section">
+      <div style="text-align: center;">
+        <span class="section-tag">Our Work</span>
+        <h2 style="font-size: 36px; color: var(--primary);">Featured Portfolio</h2>
+        <p>A glimpse of our recent branding projects.</p>
+      </div>
+      <div class="portfolio-grid">
+        <div class="portfolio-item">
+          <img src="https://static.vecteezy.com/system/resources/thumbnails/000/230/967/small/luxury-hotel-corporate-identity.jpg">
+          <div class="portfolio-overlay"><h4>Corporate Branding</h4></div>
+        </div>
+        <div class="portfolio-item">
+          <img src="https://i.pinimg.com/564x/62/de/b5/62deb5c7c55ac3035e9bdff904f3796d.jpg">
+          <div class="portfolio-overlay"><h4>Logo Identity</h4></div>
+        </div>
+        <div class="portfolio-item">
+          <img src="https://marketersmedia.com/wp-content/uploads/2025/08/print-media.png">
+          <div class="portfolio-overlay"><h4>Print Media</h4></div>
+        </div>
+        <div class="portfolio-item">
+          <img src="https://a.storyblok.com/f/165154/1280x720/d9387c52e2/start-making-money.jpg/m/">
+          <div class="portfolio-overlay"><h4>Merchandise</h4></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-content">
+      <div>
+        <h3 style="color:#fff; margin-bottom:20px; font-weight: 900;">YASH ENTERPRISES</h3>
+        <p>Premium Branding & Printing Solutions</p>
+      </div>
+      <div>
+        <h3 style="color:#fff; margin-bottom:20px;">Quick Contact</h3>
+        <a href="https://wa.me/919154702219" class="footer-link">💬 WhatsApp: +91 9154702219</a>
+        <a href="mailto:pogusaisharath@gmail.com" class="footer-link">📧 Email: pogusaisharath@gmail.com</a>
+        <p>📍 Hyderabad, Telangana</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Note: Make sure your Google Apps Script is updated to handle multiple attachments and the new fields!
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbxlwLuqcI98ksKpMHwqQP_m9x5vO-QMLxdNS7O2AIFbqyetPLxWYbkGEOubRhvupL6t/exec'; 
+    const form = document.getElementById('requirementForm');
+    const msg = document.getElementById('responseMessage');
+    const btn = document.getElementById('submitBtn');
+
+    function selectService(serviceName) {
+      document.getElementById('serviceDropdown').value = serviceName;
+      document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const fileInput = document.getElementById('fileInput');
+      const files = fileInput.files;
+
+      // Check total size (Max 2MB for stability with Apps Script)
+      let totalSize = 0;
+      for (let i = 0; i < files.length; i++) { totalSize += files[i].size; }
+      if (totalSize > 2097152) {
+        alert("Total file size exceeds 2MB. Please upload smaller files.");
+        return;
+      }
+
+      btn.disabled = true;
+      btn.innerText = "Processing Details & Files...";
+      msg.style.display = "block";
+      msg.innerHTML = "Sending Your Request...";
+
+      const formData = new FormData(form);
+      const data = Object.fromEntries(formData.entries());
+      data.files = [];
+
+      // Process multiple files
+      if (files.length > 0) {
+        for (let i = 0; i < files.length; i++) {
+          const fileData = await readFileAsBase64(files[i]);
+          data.files.push({
+            base64: fileData.split(',')[1],
+            name: files[i].name,
+            type: files[i].type
+          });
+        }
+      }
+
+      submitData(data);
+    });
+
+    function readFileAsBase64(file) {
+      return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = () => resolve(reader.result);
+        reader.onerror = reject;
+        reader.readAsDataURL(file);
+      });
+    }
+
+    function submitData(data) {
+      fetch(scriptURL, {
+        method: 'POST',
+        body: JSON.stringify(data)
+      })
+      .then(response => {
+        msg.innerHTML = "✔ Success! Your requirements and files have been sent.";
+        msg.style.color = "green";
+        btn.disabled = false;
+        btn.innerText = "Submit My Requirements";
+        form.reset();
+        setTimeout(() => { msg.style.display = "none"; }, 6000);
+      })
+      .catch(error => {
+        msg.innerHTML = "Error. Please try again.";
+        msg.style.color = "red";
+        btn.disabled = false;
+        btn.innerText = "Submit My Requirements";
+      });
+    }
+  </script>
+</body>
+</html>
